@@ -30,10 +30,10 @@ t_err parse_file(int fd, t_board *board)
 			free(line);
 			break ;
 		}
-		if (ft_strlen(line) > 5)
+		if (ft_strlen(line) > 6)
 			return (free(line), error(ERROR_INVALID_MAP));
 		int heap = ft_atoi(line);
-		if (heap > 10000)
+		if (heap > 10000 || heap < 1)
 			return (free(line), error(ERROR_INVALID_MAP));
 
 		if (add_heap(board, heap) != SUCCESS)
